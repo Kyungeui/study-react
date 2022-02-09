@@ -1,6 +1,6 @@
 import React from 'react';
 
-// route 기능을 위한 패키지에서 Route 함수와 Link 함수, Switch함수만 골라서 참조
+// route 기능을 위한 패키지에서 Route 함수와 Link 함수, Routes 함수만 골라서 참조
 import { Route, Link, Routes } from "react-router-dom";
 
 import Expr from './pages/Expr';
