@@ -82,7 +82,41 @@ const StyledComponent = () => {
     return (
         <div>
             <h2>StyledComponent</h2>
-            
+
+            <h3>단순 태그처럼 사용</h3>
+            <MyGridContainer>
+                {/* MyGridItem에게 width라는 이름의 변수값 전달 */}
+                <MyGridItem width={'20%'}>
+                    <MyBox>Item1</MyBox>
+                </MyGridItem>
+                <MyGridItem width={'20%'}>
+                    <MyBox>Item2</MyBox>
+                </MyGridItem>
+                <MyGridItem width={'20%'}>
+                    <MyBox>Item3</MyBox>
+                </MyGridItem>
+                <MyGridItem width={'20%'}>
+                    <MyBox>Item4</MyBox>
+                </MyGridItem>
+                <MyGridItem width={'20%'}>
+                    <MyBox>Item5</MyBox>
+                </MyGridItem>
+            </MyGridContainer>
+
+            <h3>배열 원소를 활용한 컴포넌트 사용</h3>
+            <MyGridContainer>
+                {myColors.map((item, index) => {
+                    return (
+                        // styledComponent에게 HTML 속성처럼 전달하는 값들은 변수로서 작용한다.
+                        // 속성 이름은 특별히 정해진 것은 없다.
+                        <MyGridItem key={index} width={myWidth}>
+                            <MyBox color={item} number={index}>
+                                {item}
+                            </MyBox>
+                        </MyGridItem>
+                    );
+                })}
+            </MyGridContainer>
         </div>
     );
 };
