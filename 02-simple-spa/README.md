@@ -15,6 +15,7 @@ yarn create react-app 02-simple-spa
 ```shell
 yarn add react-router-dom
 yarn add qs
+yarn add react-helmet
 ```
 
 ### 2) 프로젝트 생성 후 기초작업

@@ -13,6 +13,9 @@ import Error404 from './pages/Error404';
 const App = () => {
   return (
     <div className="App">
+      {/* Route 처리를 수행하는 페이지에서 이 컴포넌트 사용시, 이 내용이 모든 페이지에 공통 적용된다 */}
+      {/* <Meta/> */}
+
       <h2>02-simple-spa</h2>
       <hr />
 

@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 /**
  * /about 페이지를 구성하는 컴포넌트
  */
