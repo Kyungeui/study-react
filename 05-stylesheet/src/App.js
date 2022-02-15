@@ -66,12 +66,12 @@ const App = () => {
       <hr />
 
       <Routes>
-        <Route path="/inline_css" element={<InlineCss/>} />
-        <Route path="/css_class" element={<CssClass/>} />
-        <Route path="/css_module" element={<CssModule/>} />
-        <Route path="/scss" element={<Scss/>} />
-        <Route path="/scss_module" element={<ScssModule/>} />
-        <Route path="/styled_component" element={<StyledComponent/>} />
+        <Route path="/inline_css" element={<InlineCss />} />
+        <Route path="/css_class" element={<CssClass />} />
+        <Route path="/css_module" element={<CssModule />} />
+        <Route path="/scss" element={<Scss />} />
+        <Route path="/scss_module" element={<ScssModule />} />
+        <Route path="/styled_component" element={<StyledComponent />} />
       </Routes>
     </div>
   );
