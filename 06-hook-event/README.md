@@ -1,4 +1,4 @@
-# 07-hook-event
+# 06-hook-event
 
 ## #01. 프로젝트 생성
 
