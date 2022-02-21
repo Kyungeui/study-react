@@ -35,11 +35,11 @@ yarn add moment
 1. index.js 파일에서 `<App />`을 `<BrowserRouter><App /></BrowserRouter>`로 변경
 1. App.js 파일에 다음을 추가
    ```js
-   import { Route, NavLink, Switch } from "react-router-dom";
+   import { Route, NavLink, Routes } from "react-router-dom";
    ```
    혹은
    ```js
-   import { Route, Link, Switch } from "react-router-dom";
+   import { Route, Link, Routes } from "react-router-dom";
    ```
 
 ## 3) 프로젝트 실행
@@ -48,4 +48,10 @@ yarn add moment
 
 ```shell
 yarn start
+```
+
+
+myschool 노드 사용해서 자료 확인!
+```shell
+json-server myschool.json --port=3001
 ```
