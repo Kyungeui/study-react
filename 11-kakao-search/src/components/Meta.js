@@ -22,9 +22,9 @@ const Meta = (props) => {
 };
 
 Meta.defaultProps = {
-    title: 'BoxOffice',
-    description: 'React.js로 구현한 영화순위 대시보드',
-    keywords: 'React,영화순위,박스오피스',
+    title: '카카오 검색',
+    description: 'React.js로 구현한 카카오 검색 OpenAPI 연동',
+    keywords: 'React,Kakao,OpenAPI',
     author: '호쌤',
     image: window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/logo512.png',
     url: window.location.href
