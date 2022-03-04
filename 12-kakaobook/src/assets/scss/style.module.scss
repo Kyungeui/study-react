@@ -32,25 +32,4 @@ body {
   }
 }
 
-.mediaList {
-  margin: 25px auto;
-  padding: 0;
-  list-style: none;
 
-  .mediaItem {
-    border-top: 1px solid #eee;
-    display: table;
-    width: 100%;
-
-    &:last-child {
-      border-bottom: 1px solid #eee;
-    }
-
-    a {
-      padding: 15px 0;
-      display: table-cell;
-      vertical-align: middle;
-      color: #222;
-    }
-  }
-}

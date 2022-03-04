@@ -2,6 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+// import { useSelector, useDispatch } from 'react-redux'
+
+// import { getBlogList } from '../slices/BlogSlice';
+// import { getBookList } from '../slices/BookSlice';
+// import { getCafeList } from '../slices/CafeSlice';
+// import { getImageList } from '../slices/ImageSlice';
+// import { getWebList } from '../slices/WebSlice';
+
 const MenuLink = styled(NavLink)`
   font-size: 20px;
   cursor: pointer;
@@ -37,13 +45,41 @@ const MenuLink = styled(NavLink)`
 `;
 
 const Top = () => {
+
+  // HTML 태그에 접근할 수 있는 참조변수를 생성
+  const inputQuery = React.useRef();
+
+  // const { rt, rtmsg, item, lodaing } = useSelector((state) => state.blog);
+  // const dispatch = useDispatch();
+
+  // // 검색폼에 대한 이벤트 핸들러 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // input 태그의 입력값 가져오기
+    const value = inputQuery.current.value;
+
+    if (!value) {
+      inputQuery.current.focus();
+      alert('검색어를 입력하세요.');
+      return;
+    }
+
+    console.log(value);
+  //   dispatch(getBookList(value));
+  //   dispatch(getCafeList(value));
+  //   dispatch(getBlogList(value));
+  //   dispatch(getImageList(value));
+  //   dispatch(getWebList(value));
+  };
+
   return (
     <div>
       <div>
         <h1>카카오 검색</h1>
         <hr />
-        <form>
-          <input type="search" name="query" />
+        <form onSubmit={handleSubmit}>
+          <input type="search" name="query" ref={inputQuery}/>
           <button type="submit">검색</button>
         </form>
         <hr />
