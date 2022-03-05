@@ -22,7 +22,7 @@ const Meta = (props) => {
 };
 
 Meta.defaultProps = {
-    title: '카카오 검색',
+    title: '카카오 책 검색',
     description: 'React.js로 구현한 카카오 검색 OpenAPI 연동',
     keywords: 'React,Kakao,OpenAPI',
     author: '호쌤',

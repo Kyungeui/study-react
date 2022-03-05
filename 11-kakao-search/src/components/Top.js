@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-// import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
-// import { getBlogList } from '../slices/BlogSlice';
-// import { getBookList } from '../slices/BookSlice';
-// import { getCafeList } from '../slices/CafeSlice';
-// import { getImageList } from '../slices/ImageSlice';
-// import { getWebList } from '../slices/WebSlice';
+import { getBlogList } from '../slices/BlogSlice';
+import { getBookList } from '../slices/BookSlice';
+import { getCafeList } from '../slices/CafeSlice';
+import { getImageList } from '../slices/ImageSlice';
+import { getWebList } from '../slices/WebSlice';
 
 const MenuLink = styled(NavLink)`
   font-size: 20px;
@@ -48,9 +48,9 @@ const Top = () => {
 
   // HTML 태그에 접근할 수 있는 참조변수를 생성
   const inputQuery = React.useRef();
-
-  // const { rt, rtmsg, item, lodaing } = useSelector((state) => state.blog);
-  // const dispatch = useDispatch();
+  
+  // const { rt, rtmsg, item, lodaing } = useSelector((state) => state.web);
+  const dispatch = useDispatch();
 
   // // 검색폼에 대한 이벤트 핸들러 
   const handleSubmit = (e) => {
@@ -66,11 +66,11 @@ const Top = () => {
     }
 
     console.log(value);
-  //   dispatch(getBookList(value));
-  //   dispatch(getCafeList(value));
-  //   dispatch(getBlogList(value));
-  //   dispatch(getImageList(value));
-  //   dispatch(getWebList(value));
+    dispatch(getBookList(value));
+    dispatch(getCafeList(value));
+    dispatch(getBlogList(value));
+    dispatch(getImageList(value));
+    dispatch(getWebList(value));
   };
 
   return (
