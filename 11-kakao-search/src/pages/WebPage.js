@@ -1,11 +1,48 @@
-import React from 'react';
+import React from "react";
 
-const WebPage = () => {
-    return (
-        <div>
-            Webpage
+import { useSelector, useDispatch } from "react-redux";
+import { getWebList } from "../slices/WebSlice";
+import { Oval } from "react-loader-spinner";
+
+import style from "../assets/scss/style.module.scss";
+
+const WebPage = ({ query }) => {
+  // 리덕스 스토어에 저장되어 있는 상태값 받기
+  const { rt, rtmsg, item, loading } = useSelector((state) => state.web);
+
+  // 액션함수를 호출하기 위한 디스패치 함수 생성
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(getWebList(query));
+  }, [dispatch, query]);
+  return (
+    <div>
+      {loading && (
+        <Oval
+          color="#ff6600"
+          height={100}
+          width={100}
+          wrapperStyle={{
+            positon: "absolute",
+            left: "50%",
+            top: "50%",
+            marginLeft: "-50px",
+            marginTop: "-50px",
+          }}
+        />
+      )}
+
+      {rt !== 200 ? (
+        <div className={style.errmsg}>
+          <h3>{rt} Error</h3>
+          <p>{rtmsg}</p>
         </div>
-    );
+      ) : (
+        <code>{JSON.stringify(item)}</code>
+      )}
+    </div>
+  );
 };
 
 export default WebPage;

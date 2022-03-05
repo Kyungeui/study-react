@@ -6,14 +6,16 @@ export const getCafeList = createAsyncThunk(
   async (payload, { rejectWithValue }) => {
     let result = null;
 
-    try {
-      const apiUrl = "https://dapi.kakao.com//v2/search/cafe";
-      result = await axios.get(apiUrl, {
-        params: { query: payload },
-        headers: { Authorization: "KakaoAK 4c076871e63fbdebdc6367a4a3273e31" }
-      });
-    } catch (err) {
-      result = rejectWithValue(err.response);
+    if (payload) {
+      try {
+        const apiUrl = "https://dapi.kakao.com//v2/search/cafe";
+        result = await axios.get(apiUrl, {
+          params: { query: payload },
+          headers: { Authorization: "KakaoAK 4c076871e63fbdebdc6367a4a3273e31" }
+        });
+      } catch (err) {
+        result = rejectWithValue(err.response);
+      }
     }
 
     return result;
