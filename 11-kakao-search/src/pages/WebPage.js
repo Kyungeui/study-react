@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { getWebList } from "../slices/WebSlice";
 import { Oval } from "react-loader-spinner";
 
+import ListView from '../components/ListView';
+
 import style from "../assets/scss/style.module.scss";
 
 const WebPage = ({ query }) => {
@@ -39,7 +41,7 @@ const WebPage = ({ query }) => {
           <p>{rtmsg}</p>
         </div>
       ) : (
-        <code>{JSON.stringify(item)}</code>
+        <ListView documents={item.documents} thumb={false} />
       )}
     </div>
   );

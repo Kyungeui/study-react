@@ -1,22 +1,20 @@
 import React from "react";
 
 import { useSelector, useDispatch } from "react-redux";
-import { getCafeList } from "../slices/CafeSlice";
+import { getWebList } from "../slices/WebSlice";
 import { Oval } from "react-loader-spinner";
-
-import ListView from '../components/ListView';
 
 import style from "../assets/scss/style.module.scss";
 
-const CafePage = ({ query }) => {
+const WebPage = ({ query }) => {
   // 리덕스 스토어에 저장되어 있는 상태값 받기
-  const { rt, rtmsg, item, loading } = useSelector((state) => state.cafe);
+  const { rt, rtmsg, item, loading } = useSelector((state) => state.web);
 
   // 액션함수를 호출하기 위한 디스패치 함수 생성
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    dispatch(getCafeList(query));
+    dispatch(getWebList(query));
   }, [dispatch, query]);
   return (
     <div>
@@ -41,10 +39,10 @@ const CafePage = ({ query }) => {
           <p>{rtmsg}</p>
         </div>
       ) : (
-        <ListView documents={item.documents} thumb={true} />
+        <code>{JSON.stringify(item)}</code>
       )}
     </div>
   );
 };
 
-export default CafePage;
+export default WebPage;
